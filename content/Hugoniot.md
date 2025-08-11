@@ -25,7 +25,7 @@ last modified: 2024-04-04
 	 - Assume that the material is initially at a pressure **Po**. The pressure pulse propagates at a velocity **Us**. Application of **P1** compresses the material to a new density **$\rho_1$** and at the same time accelerates the compressed material to a velocity **Up**. Now consider a segment of the material (with unit cross-sectional area) normal to the direction of travel.
 	 - The position of the shock front at some instant of time is indicated in Fig below  by the line AA. Some short interval of time (dt) later, the shock front has advanced to BB while the matter initially at AA has moved to CC. **Across the shock front, mass, momentum and energy are conserved.**
  
-	![[Screen Shot 2024-04-04 at 6.04.21 PM.png]]
+	![screenshot](assets/Screen%20Shot%202024-04-04%20at%206.04.21%20PM.png)
 	- #### conversation of mass
 		- conversation of mass across the shock front may be expressed by noting that the mass of material encompassed by the shock wave $\rho_0U_sdt$ now occupies the volume $(U_s - u_p)dt$ at a density $\rho_1$
 		- $$\rho_0U_s = \rho_1(U_s - u_p)$$
