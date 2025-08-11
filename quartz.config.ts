@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "https://xuehui-wei.github.io/Obsidian_notes/",
+    baseUrl: "https://xuehui-wei.github.io/Obsidian_notes",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
