@@ -1,7 +1,12 @@
+---
+title: Cross referencing between different files in Overleaf
+date: 2025-10-14
+---
+
 If you want to cite the figures or tables in the supplementary, you can refer to this setup. 
 
 
-Here is `main.txt`
+Here is `main.tex`
 ```latex
 %%%%
 % (from an answer by cyberSingularity at http://tex.stackexchange.com/a/69832/226)
@@ -13,10 +18,10 @@ Here is `main.txt`
 
 \usepackage{xr}
 \makeatletter
-\newcommand*{\addFileDependency}[1]{% argument=file name and extension
-  \typeout{(#1)}% latexmk will find this if $recorder=0 (however, in that case, it will ignore #1 if it is a .aux or .pdf file etc and it exists! if it doesn't exist, it will appear in the list of dependents regardless)
-  \@addtofilelist{#1}% if you want it to appear in \listfiles, not really necessary and latexmk doesn't use this
-  \IfFileExists{#1}{}{\typeout{No file #1.}}% latexmk will find this message if #1 doesn't exist (yet)
+\newcommand*{\addFileDependency}[1]{
+  \typeout{(#1)}
+  \@addtofilelist{#1}
+  \IfFileExists{#1}{}{\typeout{No file #1.}}
 }
 \makeatother
 
@@ -25,26 +30,23 @@ Here is `main.txt`
     \addFileDependency{#1.tex}%
     \addFileDependency{#1.aux}%
 }
-%%% END HELPER CODE
 
-% put all the external documents here!
 \myexternaldocument{supp}
 
 \begin{document}
 
 Label1 is section \ref{label1} in supp.tex.
-
-%Suppose you have a figure in `supp.tex`, you want to cite the figure using \ref{label_of_fig_in_supp}. 
+%Suppose you have a figure in `supp.tex`, you want to cite the figure using \ref{label_of_fig_in_supp}.
 
 \end{document}
 
 ```
-Here is `supp.txt`
+Here is `supp.tex`
 
 ```latex
 \documentclass{article}
 
-% to test, comment or uncomment this line, and rerun `latexmk file1`. Note that both are then rebuilt as necessary and the page number in the generated `file1` is always correct.
+
 \begin{document}
 
 \section{Label1}
